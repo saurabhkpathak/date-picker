@@ -30,7 +30,12 @@ angular
         controller: 'ReadcsvCtrl',
         controllerAs: 'readCsv'
       })
+      .when('/breadcrumb', {
+        templateUrl: 'views/breadcrumb.html',
+        controller: 'BreadcrumbCtrl',
+        controllerAs: 'breadcrumb'
+      })
       .otherwise({
-        redirectTo: '/readCsv'
+        redirectTo: '/breadcrumb'
       });
   });
