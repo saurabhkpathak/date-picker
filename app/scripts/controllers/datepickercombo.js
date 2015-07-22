@@ -9,10 +9,11 @@
  */
 angular.module('grouponDatePickerApp')
   .controller('DatepickercomboCtrl', function ($scope) {
-      $scope.today = function() {
-        $scope.from_dt = new Date();
-      };
-      $scope.today();
+      $scope.fromMinDate = $scope.fromStartDate ? $scope.fromStartDate : new Date();
+      $scope.fromMaxDate = $scope.fromEndDate;
+      $scope.toMinDate = $scope.toStartDate ? $scope.toStartDate : $scope.toMaxDate;
+      $scope.toMaxDate = $scope.toEndDate;
+      $scope.ngModel = '';
 
       $scope.clear = function () {
         $scope.from_dt = null;
@@ -83,4 +84,9 @@ angular.module('grouponDatePickerApp')
 
         return '';
       };
+      $scope.$watchGroup(['from_dt', 'to_dt'], function(newValues) {
+          if (newValues.indexOf(undefined) === -1) {
+              $scope.ngModel = newValues[0].toDateString() + ' to ' + newValues[1].toDateString();
+          }
+      });
   });

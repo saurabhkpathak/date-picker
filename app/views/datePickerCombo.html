@@ -1,13 +1,15 @@
 <div class="input-group row">
   <input type="text" class="col-md-10 form-control" datepicker-popup="{{format}}" ng-model="from_dt" is-open="from_opened"
-  min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+  min-date="fromMinDate" max-date="fromMaxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"
+  close-text="Close" />
   <span class="input-group-btn col-md-2">
     <button type="button" class="btn btn-default" ng-click="openFromDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
   </span>
 </div>
 <div class="input-group row">
-  <input type="text" class="col-md-10 form-control" datepicker-popup="{{format}}" ng-model="to_dt" is-open="to_opened" min-date="from_dt+1"
-  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+  <input type="text" class="col-md-10 form-control" datepicker-popup="{{format}}" ng-model="to_dt" is-open="to_opened"
+  min-date="toMinDate" max-date="toMaxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"
+  close-text="Close" />
   <span class="input-group-btn col-md-2">
     <button type="button" class="btn btn-default" ng-click="openToDate($event)"><i class="glyphicon glyphicon-calendar"></i></button>
   </span>

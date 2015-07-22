@@ -12,6 +12,12 @@ angular.module('grouponDatePickerApp')
       templateUrl: 'views/datePickerCombo.html',
       restrict: 'E',
       controller: 'DatepickercomboCtrl',
-      scope: true
+      scope: {
+          ngModel: '=',
+          fromStartDate: '=',
+          fromEndDate: '=',
+          toStartDate: '=',
+          toEndDate: '='
+      }
     };
   });
