@@ -46,7 +46,7 @@ angular.module('grouponDatePickerApp')
 
       $scope.$watchGroup(['from_dt', 'to_dt'], function(newValues) {
           if (newValues.indexOf(undefined) === -1) {
-              $scope.ngModel = newValues[0].toDateString() + ' to ' + newValues[1].toDateString();
+              $scope.ngModel = {startDate:newValues[0], endDate:newValues[1]};
           }
       });
   });

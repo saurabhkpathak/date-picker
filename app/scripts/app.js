@@ -20,12 +20,17 @@ angular
   ])
   .config(function($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/date', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/readCsv', {
+        templateUrl: 'views/readcsv.html',
+        controller: 'ReadcsvCtrl',
+        controllerAs: 'readCsv'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/readCsv'
       });
   });
