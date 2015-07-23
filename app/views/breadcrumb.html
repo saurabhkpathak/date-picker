@@ -1,12 +1,7 @@
-<input type="text" ng-model="searchStr" ng-change="populateSuggestionList(searchStr)">
-<ul>
-  <li ng-repeat="item in suggestionList | filter: searchStr | filter: isAddedToFinalList" ng-click="addToFinalList(item)">
-    {{item.name}}
-  </li>
-</ul>
-<div>
-  {{finalList}}
-</div>
-<div ng-repeat="item in finalList">
-    <span ng-click="removeItem($index)">{{item.name}}</span>
-</div>
+<custom-completion mode="select" ng-model="userInput">
+</custom-completion>
+{{userInput}}
+<br>
+<custom-completion mode="add" ng-model="userList">
+</custom-completion>
+{{userList}}

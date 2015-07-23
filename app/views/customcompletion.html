@@ -1,0 +1,11 @@
+<input type="text" ng-model="searchStr" ng-change="populateSuggestionList(searchStr)">
+<ul ng-show="showSuggestion">
+  <li ng-repeat="item in suggestionList | filter: searchStr | filter: isAddedToFinalList" ng-click="addToFinalList(item)">
+    {{item.name}}
+  </li>
+</ul>
+<section ng-show="finalList.length">
+<div ng-repeat="item in finalList">
+    <span ng-click="removeItem($index)">{{item.name}}</span>
+</div>
+</section>
